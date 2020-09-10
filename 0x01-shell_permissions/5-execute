@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod 0755 hello
+chmod 764 5-execute
