@@ -17,5 +17,3 @@
 * File: 15-lets_move
 * File: 16-clean_emacs
 * File: 17-tree
-.
-
