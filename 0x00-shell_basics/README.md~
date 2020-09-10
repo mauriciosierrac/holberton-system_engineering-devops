@@ -1,0 +1,20 @@
+###This project containt the commands shell tasks
+* File: 0-current_working_directory
+* File: 1-listit
+* File: 2-bring_me_home
+* File: 3-listfiles
+* File: 4-listmorefiles
+* File: 5-listfilesdigitonly
+* File: 6-firstdirectory
+* File: 7-movethatfile
+* File: 8-firstdelete
+* File: 9-firstdirdeletion
+* File: 10-back
+* File: 11-lists
+* File: 12-file_type
+* File: 13-symbolic_link
+* File: 14-copy_html
+* File: 15-lets_move
+* File: 16-clean_emacs
+* File: 17-tree
+
