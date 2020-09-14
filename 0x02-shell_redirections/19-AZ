@@ -1,2 +1,2 @@
 #!/bin/bash
-cut 'A' 'c' | cut 'Z' 'e'
+tr 'A' 'c' | tr 'Z' 'e'
