@@ -1,2 +1,2 @@
 #!/bin/bash
-awk 'N==3' iacta
+awk 'N==3 {print}' iacta
