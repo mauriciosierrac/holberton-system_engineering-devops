@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
+#ssh private key
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/jHe6CDWRDHGo36bOhhQwkZK1RQvi4KaMIfzmf7Kn33VlsLgLluqID+cVigh/Z6cfdpip/3ERqUmaxvzP7a/CiER2qTFnQ1dGi5TsbWxs+WyJR83uQ3EgtSi/tv0afe6UvIdTga7o1P7KzCIuBjj1s/eod6hZp0dZZ+tq6ZZ6yOHVnc2YnhgGjxld6D75f3kD3931jZ4xSfkLa7BVBx4ypITB8zRWjQ+Lh5k81ZTIoon5Q6oeHugomK1Fn66wrjZ3EZvdqQ2VLuaLFxV+1aeQn3CEAty5QLEaHjBvIQrg3TfEo5d1iq3EGi0/W6RTpcaKqqMjDyu/lYULV5vRCYf1 root@vagrant-ubuntu-trusty-64
