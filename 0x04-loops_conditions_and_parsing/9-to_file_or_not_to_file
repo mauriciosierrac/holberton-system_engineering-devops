@@ -6,9 +6,9 @@ if [ -e "$file" ]
 	echo "holbertonschool file exists"
 		if [ ! -s "$file" ]
 		then
-		echo "holbertonschool file is not empty"
-		else
 		echo "holbertonschool file is empty"
+		else
+		echo "holbertonschool file is not empty"
 		fi
 
 		if [ -f "$file" ]
