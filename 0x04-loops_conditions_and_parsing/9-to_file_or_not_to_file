@@ -6,14 +6,14 @@ if [ -e "$file" ]
 	echo "holbertonschool file exists"
 		if [ ! -s "$file" ]
 		then
-		echo "holbertonschool file is empty"
+		echo "$file file is empty"
 		else
-		echo "holbertonschool file is not empty"
+		echo "$file file is not empty"
 		fi
 		if [ -f "$file" ]
 		then
-		echo "holbertonschool is a regular file"
+		echo "$file is a regular file"
 		fi
 else
-	echo "holbertonschool file does not exists"
+	echo "$file file does not exists"
 fi
