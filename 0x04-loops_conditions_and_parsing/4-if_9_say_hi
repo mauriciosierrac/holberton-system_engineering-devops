@@ -7,7 +7,7 @@ while [ $i -lt 11 ]
 	then 
 	echo "Hi"
 else
-  	echo "$i Holberton School"
+  	echo "Holberton School"
 	fi
 	let i+=1
 done
