@@ -2,16 +2,16 @@
 #verify if a file exist and print message
 
 NFILE=holbertonschool
-if [ -e "$NFILE" ]
+if [ -e $NFILE ]
 then 
 echo "holbertonschool file exists"
-if [ -s "$NFILE" ]
+if [ -s $NFILE ]
 then
 echo "holbertonschool file is not empty"
 else
 echo "holbertonschool file is empty"
 fi
-if [ -f "$NFILE" ]
+if [ -f $NFILE ]
 then
 echo "holbertonschool is a regular file"
 fi
