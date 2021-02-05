@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #verify if a file exist and print message
-file=holbertonschool
+file="holbertonschool"
 if [ -e "$file" ]
 	then 
 	echo "holbertonschool file exists"
@@ -10,7 +10,6 @@ if [ -e "$file" ]
 		else
 		echo "holbertonschool file is not empty"
 		fi
-
 		if [ -f "$file" ]
 		then
 		echo "holbertonschool is a regular file"
