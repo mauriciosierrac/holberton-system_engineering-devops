@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #verify if a file exist and print message
-file="holbertonschool"
+file=holbertonschool
 if [ -e "$file" ]
 	then 
 	echo "holbertonschool file exists"
