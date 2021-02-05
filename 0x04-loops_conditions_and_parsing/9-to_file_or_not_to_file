@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 #verify if a file exist and print message
-file=holbertonschool
-if [ -e "$file" ]
+NFILE=holbertonschool
+if [ -e "$NFILE" ]
 	then 
-	echo "$file file exists"
-		if [ -s "$file" ]
+	echo "$NFILE file exists"
+		if [ -s "$NFILE" ]
 			then
-			echo "$file file is not empty"
+			echo "$NFILE file is not empty"
 		else
-			echo "$file file is empty"
+			echo "$NFILE file is empty"
 		fi
-		if [ -f "$file" ]
+		if [ -f "$NFILE" ]
 			then
-			echo "$file is a regular file"
+			echo "$NFILE is a regular file"
 		fi
 else
-	echo "$file file does not exists"
+	echo "$NFILE file does not exists"
 fi
