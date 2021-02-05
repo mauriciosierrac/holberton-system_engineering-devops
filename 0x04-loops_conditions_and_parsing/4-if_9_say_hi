@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 #print Holberton School 10 times, but the 9 position print Hi
 i=1
-while [  $i -lt 10 ]
+while [  $i -lt 11 ]
  do 
- if [ $i == 9 ]
+ if [ $i = 9 ]
 	then 
 	echo "Hi"
-fi
-  	echo "Holberton School"
+else
+  	echo "$i Holberton School"
+	fi
 	i=$(( i+1 ))
 done
