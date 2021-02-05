@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #print Holberton School 10 times, but the 9 position print Hi
-i=0
-while [  $i -lt 11 ]
+i=1
+while [ $i -lt 11 ]
  do 
  if [ $i = 9 ]
 	then 
@@ -9,5 +9,5 @@ while [  $i -lt 11 ]
 else
   	echo "$i Holberton School"
 	fi
-	i=$(( i+1 ))
+	let i+=1
 done
