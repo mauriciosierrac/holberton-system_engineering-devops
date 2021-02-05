@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# write a bash that show the contain of /etc/passwd
+while read FILE
+do
+echo "$FILE" | cut -f1,3,6 -d":"
+done < /etc/passwd
