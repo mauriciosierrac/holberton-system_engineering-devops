@@ -2,18 +2,18 @@
 #verify if a file exist and print message
 NFILE=holbertonschool
 if [ -e "$NFILE" ]
-	then 
-	echo "$NFILE file exists"
-		if [ -s "$NFILE" ]
-			then
-			echo "$NFILE file is not empty"
-		else
-			echo "$NFILE file is empty"
-		fi
-		if [ -f "$NFILE" ]
-			then
-			echo "$NFILE is a regular file"
-		fi
+then 
+echo "holbertonschool file exists"
+if [ -s "$NFILE" ]
+then
+echo "holbertonschool file is not empty"
 else
-	echo "$NFILE file does not exists"
+echo "holbertonschool file is empty"
+fi
+if [ -f "$NFILE" ]
+then
+echo "holbertonschool is a regular file"
+fi
+else
+echo "holbertonschool file does not exists"
 fi
