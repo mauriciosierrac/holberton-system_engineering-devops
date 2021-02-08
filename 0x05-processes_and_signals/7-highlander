@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#the script display a message and display another with receiving a signal
+trap "echo 'I am invincible!!!'" SIGTERM
+while :
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
