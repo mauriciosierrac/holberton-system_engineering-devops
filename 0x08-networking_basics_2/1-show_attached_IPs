@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+ifconfig | grep "inet addr:" | awk -F '[: ]+' '{print $4}'
