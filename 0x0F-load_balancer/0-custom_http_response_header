@@ -1,1 +1,11 @@
 #!/usr/bin/env bash
+# update dependences and packages, install nginx service
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo apt-get -y upgrade
+
+# search file file in configuration server and add line of header request
+sudo sed -i '/listen 80 default_server;/a add_header X-Served-By $HOSTNAME;' /etc/nginx/sites-available/default
+
+# restart service nginx for load changes
+sudo service nginx restart
