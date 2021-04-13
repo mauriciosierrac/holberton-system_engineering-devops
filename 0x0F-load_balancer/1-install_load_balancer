@@ -14,7 +14,7 @@ sudo cp /etc/default/haproxy /etc/default/haproxy.bak
 sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.bak
 
 # configure Round Robin for webservers
-echo -e "frontend web-frontend\n\tbind *:80\n\tmode http\n\tdefault_backend web-backend\n\tbalance roundrobin\n\tmode http\n\toption forwardfor\n\tserver 2376-web-01 34.75.52.228:80 check\n\tserver 2376-web-02 18.212.233.99 check\n" | tee -a /etc/haproxy/haproxy.cfg
+echo -e "frontend web-frontend\n\tbind *:80\n\tmode http\n\tdefault_backend web-backend\n\nbackend web-backend\n\tbalance roundrobin\n\tmode http\n\toption forwardfor\n\tserver 2376-web-01 34.75.52.228:80 check\n\tserver 2376-web-02 54.242.224.108:80 check\n" | tee -a /etc/haproxy/haproxy.cfg
 
 # Restart HAProxy service
 sudo service haproxy reload
