@@ -7,14 +7,15 @@ sudo apt-get -y upgrade
 sudo apt-get install -y haproxy
 
 # Configure HAProxy init script
-sudo sed -i "s/ENABLED=0/ENABLED=1/" /etc/default/haproxy
+sudo sed -i "s/ENABLED=1/" /etc/default/haproxy
 
 # Create Backup of haproxy.cfg and haproxy file
 sudo cp /etc/default/haproxy /etc/default/haproxy.bak
 sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.bak
 
 # configure Round Robin for webservers
-echo -e "frontend web-frontend\n\tbind 0.0.0.0:80\n\tmode http\n\tdefault_backend web-backend\n\nbackend web-backend\n\tbalance roundrobin\n\tmode http\n\toption forwardfor\n\tserver 2376-web-01 34.75.52.228:80 check\n\tserver 2376-web-02 54.242.224.108:80 check\n" | tee -a /etc/haproxy/haproxy.cfg
+config="global\n\tlog 127.0.0.1 local0 notice\n\tmaxconn 2000\n\tuser haproxy\n\tgroup haproxy\ndefaults\n\tlog     global\n\tmode    http\n\toption  httplog\n\toption  dontlognull\n\tretries 3\n\toption redispatch\n\ttimeout connect  5000\n\ttimeout client  10000\n\ttimeout server  10000\nfrontend web-frontend\n\tbind 0.0.0.0:80\n\tmode http\n\tdefault_backend web-backend\nbackend web-backend\n\tbalance roundrobin\n\tmode http\n\toption httpclose\n\toption forwardfor\n\tserver 300-web-01 35.237.197.183:80 check\n\tserver 300-web-02 35.237.134.117:80 check"
+echo -e $config | tee -a /etc/haproxy/haproxy.cfg
 
 # Restart HAProxy service
 sudo service haproxy reload
