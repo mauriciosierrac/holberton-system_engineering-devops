@@ -1,1 +1,21 @@
 #!/usr/bin/env bash
+# Install a HAProxy service and configure 2 machines
+
+# update and upgrade packages system
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get install -y haproxy
+
+# Configure HAProxy init script
+sudo sed -i "s/ENABLED=0/ENABLED=1/" /etc/default/haproxy
+
+# Create Backup of haproxy.cfg and haproxy file
+sudo cp /etc/default/haproxy /etc/default/haproxy.bak
+sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.bak
+
+# configure Round Robin for webservers
+echo -e "frontend web-frontend\n\tbind *:80\n\tmode http\n\tdefault_backend web-backend\n\tbalance roundrobin\n\tmode http\n\toption forwardfor\n\tserver 2376-web-01 34.75.52.228:80 check\n\tserver 2376-web-02 18.212.233.99 check\n" | tee -a /etc/haproxy/haproxy.cfg
+
+# Restart HAProxy service
+sudo service haproxy reload
+sudo service haproxy restart
