@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#this script configure a new user for Run Nginx without root privileges
+
+# finally the apache service
+pkill apache2
+
+# we assign execution privileges
+chmod -R 777 /etc/nginx/
+
+# change the assing user in the Nginx config file
+sed -i "s/#user www-data/user nginx/" /etc/nginx/nginx.conf
+
+# allow the all traffic al 8080 port
+sed -i 's/80/8080/g' /etc/nginx/sites-available/default
+
+# change the execute user to Nginx config file
+sudo -u nginx nginx -c /etc/nginx/nginx.conf
