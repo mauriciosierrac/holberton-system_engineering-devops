@@ -14,7 +14,7 @@ def top_ten(subreddit):
     """
 
     url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
-    
+
     headers = {
         "User-Agent": "linux:task00.api:v1.0.0 (by /u/Holberton2020)"
     }
@@ -23,7 +23,7 @@ def top_ten(subreddit):
         "limit": 10
     }
 
-    response = requests.get(url, headers=headers ,params=params)
+    response = requests.get(url, headers=headers, params=params)
     if (response is None):
         print('None')
         return
