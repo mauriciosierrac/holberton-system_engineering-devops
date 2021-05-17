@@ -14,10 +14,9 @@ def number_of_subscribers(subreddit):
         "User-Agent": "linux:task00.api:v1.0.0 (by /u/Holberton2020)"
     }
 
-    response = requests.get(url, headers=headers, allow_redirects=False)
-    print(response.status_code)
+    response = requests.get(url, headers=headers)
 
     if (response.status_code == 404):
         return 0
-    res = response.json().get('data')
-    return res.get('suscribers')
+    res = response.json().get('data', {}).get('suscribers', 0)
+    return res
