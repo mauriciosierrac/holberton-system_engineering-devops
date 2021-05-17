@@ -8,10 +8,16 @@ def number_of_subscribers(subreddit):
     """[get a parameter of subreddit]
         subreddit: param to argv[1]
     """
-
-    response = requests.get('http://www.reddit.com/r/{}/about.json'.
-                            format(subreddit)).json()
-    subs = response.get('data', {}).get('subscribers')
-    if (subs is None):
+    url = 'http://www.reddit.com/r/{}/about.json'.format(subreddit)
+    
+    headers = {
+        "User-Agent": "linux:task00.api:v1.0.0 (by /u/Holberton2020)"
+    }
+    
+    response = requests.get(url, headers=headers)
+    print(response.status_code)
+    
+    if (response.status_code == 404):
         return 0
-    return subs
+    res = response.json().get('data')
+    return res.get('suscribers')
